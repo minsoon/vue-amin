@@ -19,7 +19,7 @@ export default {
       store.dispatch('updateIsUser', data);
       setTimeout(function () {
         if (store.state.user.accessToken) {
-          resolve();
+          resolve(store.state.user);
         } else {
           reject(error);
         }

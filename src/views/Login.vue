@@ -22,14 +22,27 @@
           @click:append="pwShow = !pwShow"
         />
         <div class="submitBtn">
-          <v-btn
-            :disabled="!valid"
+          <!--<v-btn-->
+            <!--:disabled="!valid"-->
+            <!--name="submit"-->
+            <!--@click="submit"-->
+          <!--&gt;-->
+            <!--submit-->
+          <!--</v-btn>-->
+          <button
+            @click="submit()"
             name="submit"
-            @click="submit"
           >
             submit
+          </button>
+          <v-btn
+            @click="clear"
+            name="clear"
+          >
+            clear
           </v-btn>
-          <v-btn @click="clear">clear</v-btn>
+        </div>
+        <div>
         </div>
       </v-form>
     </v-card>
@@ -54,23 +67,19 @@
         password: '',
         passwordRules: {
           required: value => !!value || 'Required.',
-          min: v => v.length >= 8 || 'Min 8 characters',
-          emailMatch: () => ('The email and password you entered don\'t match')
+          min: v => v.length >= 8 || 'Min 8 characters'
         }
       };
-    },
-    created () {
-      console.log('-');
     },
     methods: {
       submit () {
         if (this.$refs.form.validate()) {
-          var $router = this.$router;
+          let $router = this.$router;
           auth.login({
             id: this.name,
             password: this.password
-          }).then(function () {
-            $router.push('main');
+          }).then(function (data) {
+            $router.push('/main');
           }, function () {
             alert('로그인 에러');
             /*
@@ -78,10 +87,14 @@
              *   - 알림 모듈 생성하여 관리?
              * */
           });
+        } else {
+          alert('id. pw 입력');
         }
       },
       clear () {
-        this.$refs.form.reset()
+        // this.$refs.form.reset();
+        this.name = '';
+        this.password = '';
       }
     }
   };
