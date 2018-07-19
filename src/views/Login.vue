@@ -22,18 +22,15 @@
           @click:append="pwShow = !pwShow"
         />
         <div class="submitBtn">
-          <!--<v-btn-->
-            <!--:disabled="!valid"-->
-            <!--name="submit"-->
-            <!--@click="submit"-->
-          <!--&gt;-->
-            <!--submit-->
-          <!--</v-btn>-->
           <button
+            type="button"
             @click="submit()"
+            class="v-btn"
             name="submit"
           >
-            submit
+            <div class="v-btn__content">
+              submit
+            </div>
           </button>
           <v-btn
             @click="clear"
@@ -41,8 +38,6 @@
           >
             clear
           </v-btn>
-        </div>
-        <div>
         </div>
       </v-form>
     </v-card>
@@ -79,7 +74,7 @@
             id: this.name,
             password: this.password
           }).then(function (data) {
-            $router.push('/main');
+            $router.push({ name: 'Main' });
           }, function () {
             alert('로그인 에러');
             /*
