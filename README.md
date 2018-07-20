@@ -1,6 +1,6 @@
-# vue-cli-guide
+# vue-simple
 
-> A Vue.js project
+> vue를 이용한 프로젝트 템플릿
 
 ## Build Setup
 
