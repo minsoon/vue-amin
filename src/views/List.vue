@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xl>
     <v-layout column reverse fill-height>
-      <v-flex v-for="(item, index) in items" :key="index" xs12>
+      <v-flex v-for="(item, index) in items" :key="index" class="item" xs12>
         <v-card dark>
           <v-card-text>
             <v-icon>widgets</v-icon> {{ item.golfclubNameEng }}
@@ -54,10 +54,10 @@ export default {
     this.getMyRounds();
   },
   methods: {
-    resetData () {
-      store.dispatch('clearState', 'myRounds');
-      this.getMyRounds();
-    },
+    // resetData () {
+      // store.dispatch('clearState', 'myRounds');
+      // this.getMyRounds();
+    // },
     getMyRounds () {
       store.dispatch('addState', {
         name: 'myRounds',

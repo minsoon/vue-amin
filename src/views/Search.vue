@@ -5,6 +5,7 @@
         <v-flex xs12 sm6 md3>
           <v-text-field
             v-model="searchKeyword"
+            name="search"
             label="Search"
             append-icon="search"
           >
@@ -32,9 +33,5 @@ export default {
       searchKeyword: ''
     };
   },
-  methods: {
-    searchFilter () {
-    }
-  }
 };
 </script>

@@ -5,7 +5,6 @@ import store from '@/store';
 const wrapper = mount(Login);
 
 describe('Login.vue', () => {
-
   it('1. 아이디 오류시 상활별로 에러 메시지가 정상 노출 하는가', (done) => {
     const input = wrapper.find('input[name=name]');
     input.setValue('mcsung85@gamcil.com');
