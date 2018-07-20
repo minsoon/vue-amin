@@ -1,7 +1,8 @@
 import error from '@/views/Page404';
 import login from '@/views/Login';
-import main from '@/views/Main';
+import search from '@/views/Search';
 import list from '@/views/List';
+import vuetifyGuide from '@/views/VuetifyGuide';
 
 const routes = [
   {
@@ -13,10 +14,10 @@ const routes = [
     isPublic: false
   },
   {
-    name: 'Main',
-    path: '/main',
-    component: main,
-    title: 'Main',
+    name: 'Search',
+    path: '/search',
+    component: search,
+    title: 'Search',
     layout: 'LayoutDefault',
     isPublic: true
   },
@@ -25,6 +26,14 @@ const routes = [
     path: '/list',
     component: list,
     title: 'List',
+    layout: 'LayoutDefault',
+    isPublic: true
+  },
+  {
+    name: 'VuetifyGuide',
+    path: '/VuetifyGuide',
+    component: vuetifyGuide,
+    title: 'Vuetify Guide',
     layout: 'LayoutDefault',
     isPublic: true
   },
