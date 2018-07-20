@@ -12,22 +12,32 @@
     >
       <v-list class="nav" dense>
         <v-list-tile>
-          <router-link to="/main">
+          <router-link to="/list">
             <v-list-tile-action>
               <v-icon>dashboard</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>Main</v-list-tile-title>
+              <v-list-tile-title>List</v-list-tile-title>
             </v-list-tile-content>
           </router-link>
         </v-list-tile>
         <v-list-tile>
-          <router-link to="/list">
+          <router-link to="/search">
             <v-list-tile-action>
-              <v-icon>settings</v-icon>
+              <v-icon>dashboard</v-icon>
             </v-list-tile-action>
             <v-list-tile-content>
-              <v-list-tile-title>List</v-list-tile-title>
+              <v-list-tile-title>Search</v-list-tile-title>
+            </v-list-tile-content>
+          </router-link>
+        </v-list-tile>
+        <v-list-tile>
+          <router-link to="/vuetifyGuide">
+            <v-list-tile-action>
+              <v-icon>dashboard</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>vuetify guide</v-list-tile-title>
             </v-list-tile-content>
           </router-link>
         </v-list-tile>
@@ -54,10 +64,12 @@ export default {
     return {
       msg: '- AppHeader',
       drawer: false,
-      title: store.state.title
+      title: store.state.title,
+      user: {}
     };
   },
   created () {
+    this.user = store.state.user;
     store.watch((state) => state.title, (newValue, oldValue) => {
       this.title = newValue;
     });
