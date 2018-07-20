@@ -74,7 +74,7 @@
             id: this.name,
             password: this.password
           }).then(function (data) {
-            $router.push({ name: 'Main' });
+            $router.push({ name: 'List' });
           }, function () {
             alert('로그인 에러');
             /*

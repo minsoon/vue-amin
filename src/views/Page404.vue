@@ -1,6 +1,6 @@
 <template>
-  <div class="lgoin">
-    <h1>404-PAGE</h1>
+  <div class="notPage">
+    <h1>404</h1>
   </div>
 </template>
 
@@ -19,4 +19,13 @@ export default {
 </script>
 
 <style scoped>
+  .notPage {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    text-align:center;
+    font-size:26px;
+  }
 </style>
