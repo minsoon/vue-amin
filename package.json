@@ -1,8 +1,8 @@
 {
-  "name": "vue-cli-guide",
-  "version": "1.0.0",
-  "description": "A Vue.js project",
-  "author": "minchang <mcsung85@gmail.com>",
+  "name": "mc-vue-simple",
+  "version": "0.0.1",
+  "description": "vue simple project",
+  "author": "mcsung85 <mcsung85@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
@@ -11,6 +11,22 @@
     "test": "npm run unit",
     "build": "node build/build.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minsoon/vue-simple.git"
+  },
+  "keywords": [
+    "mcsung",
+    "vue",
+    "vuex",
+    "vuetify",
+    "unit-test",
+    "front-end"
+  ],
+  "bugs": {
+    "url": "https://github.com/minsoon/vue-simple/issues"
+  },
+  "homepage": "",
   "dependencies": {
     "axios": "^0.18.0",
     "babel-eslint": "^8.2.6",
