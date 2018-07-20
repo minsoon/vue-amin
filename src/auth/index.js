@@ -1,7 +1,7 @@
 import store from '@/store';
 import axios from 'axios';
 
-let apiDomain = 'http://gfs.spazon.com:8020/api';
+let apiDomain = process.env.API_BASE_URL;
 let error = 'error';
 
 export default {
@@ -9,7 +9,7 @@ export default {
     return new Promise((resolve, reject) => {
       var data = {
         user: {
-          accessToken: 'accesstoken',
+          accessToken: 'tokenKey',
           appId: process.env.APP_ID,
           name: '성민창',
           email: 'mcsung85@gmail.com',
