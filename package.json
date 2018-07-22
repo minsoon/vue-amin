@@ -26,6 +26,7 @@
   "bugs": {
     "url": "https://github.com/minsoon/vue-simple/issues"
   },
+  "main": "./index.html",
   "homepage": "",
   "dependencies": {
     "axios": "^0.18.0",
