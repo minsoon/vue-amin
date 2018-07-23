@@ -1,6 +1,12 @@
 <template>
-  <v-footer fixed align-end fill-height>
-    <span>AppFooter</span>
+  <v-footer fixed align-end height="auto">
+    <v-flex
+      lighten-2
+      py-3
+      text-xs-center
+    >
+      &copy; 2018 — <strong>McVueSimple</strong>
+    </v-flex>
   </v-footer>
 </template>
 

@@ -4,7 +4,9 @@
     <app-header />
     <!-- @slot Use this slot content -->
     <v-content>
-      <router-view/>
+      <div class="content">
+        <router-view/>
+      </div>
     </v-content>
     <!-- @slot Use this slot footer -->
     <app-footer />
@@ -40,4 +42,7 @@ export default {
 
 <style lang="less">
   @import '../../less/mixin';
+  .content {
+    padding-bottom: 50px;
+  }
 </style>
