@@ -4,13 +4,16 @@ import Vue from 'vue';
 import router from './router';
 import store from './store';
 import Vuetify from 'vuetify';
+import VueBus from 'vue-bus';
 import 'vuetify/dist/vuetify.min.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import 'babel-polyfill';
 import App from './App';
 
 Vue.use(Vuetify);
+Vue.use(VueBus);
 
+Vue.prototype.$eventHub = new Vue();
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

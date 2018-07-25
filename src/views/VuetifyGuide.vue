@@ -93,7 +93,7 @@
         <div class="txt">selected item : <span>{{ select }}</span></div>
 
         <div class="txtBox">
-          Vuetify Combobox Url : <a href="https://vuetifyjs.com/en/components/combobox#introduction" target="_blank">https://vuetifyjs.com/en/components/combobox#introduction</a>
+          Vuetify Combobox Url : <a href="https://vuetifyjs.com/en/components/combobox" target="_blank">https://vuetifyjs.com/en/components/combobox</a>
         </div>
       </div>
 
@@ -162,7 +162,7 @@
         </v-layout>
 
         <div class="txtBox">
-          Vuetify Text field Url : <a href="https://vuetifyjs.com/en/components/text-fields#example-password" target="_blank">https://vuetifyjs.com/en/components/text-fields#example-password</a>
+          Vuetify Text field Url : <a href="https://vuetifyjs.com/en/components/text-fields" target="_blank">https://vuetifyjs.com/en/components/text-fields</a>
         </div>
       </div>
 
@@ -197,7 +197,7 @@
         </v-layout>
 
         <div class="txtBox">
-          Vuetify Selection controls Url : <a href="https://vuetifyjs.com/en/components/selection-controls#example-checkboxes-boolean" target="_blank">https://vuetifyjs.com/en/components/selection-controls#example-checkboxes-boolean</a>
+          Vuetify Selection controls Url : <a href="https://vuetifyjs.com/en/components/selection-controls" target="_blank">https://vuetifyjs.com/en/components/selection-controls</a>
         </div>
       </div>
 

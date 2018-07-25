@@ -1,7 +1,7 @@
 <template>
   <v-container grid-list-xl>
     <v-layout column reverse fill-height>
-      <v-flex v-for="(item, index) in items" :key="index" class="item" xs12>
+      <v-flex v-for="(item, index) in items" :key="index" @click="view(item)" class="item" xs12>
         <v-card dark>
           <v-card-text>
             <v-icon>widgets</v-icon> {{ item.golfclubNameEng }}
@@ -35,7 +35,8 @@ export default {
     return {
       init: false,
       msg: '  - list',
-      items: data
+      items: data,
+      item: null
     };
   },
   watch: {
@@ -64,6 +65,8 @@ export default {
         data: this.items
       });
       /*
+      * api 호출
+      *
       auth.get('/myRounds/rounds/2018', {
         'page': 0,
         'size': 100,
@@ -78,6 +81,11 @@ export default {
         console.log(error);
       });
       */
+    },
+    view (item) {
+      this.$router.push('/dataView');
+      this.$bus.emit('view-data', item);
+      // this.$eventHub.$emit('viewData', item);
     }
   }
 };

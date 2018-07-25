@@ -32,6 +32,16 @@
           </router-link>
         </v-list-tile>
         <v-list-tile>
+          <router-link to="/chart">
+            <v-list-tile-action>
+              <v-icon>dashboard</v-icon>
+            </v-list-tile-action>
+            <v-list-tile-content>
+              <v-list-tile-title>chart</v-list-tile-title>
+            </v-list-tile-content>
+          </router-link>
+        </v-list-tile>
+        <v-list-tile>
           <router-link to="/vuetifyGuide">
             <v-list-tile-action>
               <v-icon>dashboard</v-icon>

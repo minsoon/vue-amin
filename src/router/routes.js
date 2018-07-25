@@ -2,6 +2,8 @@ import error from '@/views/Page404';
 import login from '@/views/Login';
 import search from '@/views/Search';
 import list from '@/views/List';
+import dataview from '@/views/dataview';
+import chart from '@/views/chart/index';
 import vuetifyGuide from '@/views/VuetifyGuide';
 
 const routes = [
@@ -30,10 +32,26 @@ const routes = [
     isPublic: true
   },
   {
+    name: 'DataView',
+    path: '/dataView',
+    component: dataview,
+    title: 'DataView',
+    layout: 'LayoutDefault',
+    isPublic: true
+  },
+  {
     name: 'VuetifyGuide',
     path: '/VuetifyGuide',
     component: vuetifyGuide,
     title: 'Vuetify Guide',
+    layout: 'LayoutDefault',
+    isPublic: true
+  },
+  {
+    name: 'Chart',
+    path: '/Chart',
+    component: chart,
+    title: 'Chart',
     layout: 'LayoutDefault',
     isPublic: true
   },

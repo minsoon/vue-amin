@@ -1,6 +1,6 @@
 {
   "name": "mc-vue-simple",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "vue simple project",
   "author": "mcsung85 <mcsung85@gmail.com>",
   "scripts": {
@@ -19,6 +19,7 @@
     "vue",
     "vuex",
     "vuetify",
+    "vue-chartjs",
     "unit-test",
     "front-end"
   ],
@@ -33,12 +34,15 @@
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-polyfill": "^6.26.0",
+    "chart.js": "^2.7.2",
     "es6-promise": "^4.2.4",
     "eslint-friendly-formatter": "^4.0.1",
     "material-design-icons-iconfont": "^3.0.3",
     "postcss-url": "^7.3.2",
     "routes": "^2.1.0",
     "vue": "^2.5.2",
+    "vue-bus": "^1.1.0",
+    "vue-chartjs": "^3.3.2",
     "vue-js-cookie": "^2.1.0",
     "vue-router": "^3.0.1",
     "vuetify": "^1.1.1",
