@@ -18,6 +18,7 @@
           :type="pwShow ? 'text' : 'password'"
           label="Password"
           hint="At least 8 characters"
+          autocomplete="password"
           counter
           @click:append="pwShow = !pwShow"
         />

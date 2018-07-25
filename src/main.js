@@ -14,7 +14,7 @@ import App from './App';
 Vue.use(Vuetify);
 Vue.use(VueBus);
 Vue.use(VueAnalytics, {
-  id: 'UA-122842050-1',
+  id: process.env.ANALYTICS_ID,
   router
 });
 

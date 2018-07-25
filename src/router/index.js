@@ -8,17 +8,18 @@ Vue.use(Router);
 
 function guardRoute (to, from, next) {
   // work-around to get to the Vuex store (as of Vue 2.0)
-  const accessToken = store.state.user.accessToken;
-  const isUser = Cookies.get('isUser') ? JSON.parse(Cookies.get('isUser')) : undefined;
+  let accessToken = store.state.user.accessToken;
+  let isUser = Cookies.get('isUser') ? JSON.parse(Cookies.get('isUser')) : undefined;
 
-  if (!accessToken && !isUser && to.path !== '/login') {
-    next({path: '/login'});
-  } else {
-    if (!accessToken && isUser) {
-      store.dispatch('updateIsUser', isUser);
-    }
-    next();
+  if (!accessToken && isUser) {
+    store.dispatch('updateIsUser', isUser);
+    accessToken = store.state.user.accessToken;
   }
+
+  if (!accessToken) {
+    next({ path: '/login' });
+  }
+  next();
 }
 
 const router = new Router({
