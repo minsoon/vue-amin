@@ -16,7 +16,7 @@
       <v-tab-item :id="TabCharts[0]">
         <v-card flat>
           <v-card-text class="maxWidExample">
-            <bar-example :barOption="barOption" />
+            <bar-example />
           </v-card-text>
         </v-card>
       </v-tab-item>
