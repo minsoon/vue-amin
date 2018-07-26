@@ -3,22 +3,47 @@
 import Vue from 'vue';
 import router from './router';
 import store from './store';
-import Vuetify from 'vuetify';
-import VueBus from 'vue-bus';
+import {
+  Vuetify,
+  VApp,
+  VGrid,
+  VCard,
+  VIcon,
+  VList,
+  VBtn,
+  VFooter,
+  VToolbar,
+  VNavigationDrawer
+} from 'vuetify';
+import { Ripple } from 'vuetify/es5/directives';
 import VueAnalytics from 'vue-analytics';
 import 'vuetify/dist/vuetify.min.css';
 import 'material-design-icons-iconfont/dist/material-design-icons.css';
 import 'babel-polyfill';
 import App from './App';
 
-Vue.use(Vuetify);
-Vue.use(VueBus);
+Vue.use(Vuetify, {
+  components: {
+    VApp,
+    VGrid,
+    VCard,
+    VIcon,
+    VList,
+    VBtn,
+    VFooter,
+    VToolbar,
+    VNavigationDrawer
+  },
+  directives: {
+    Ripple
+  }
+});
+
 Vue.use(VueAnalytics, {
   id: process.env.ANALYTICS_ID,
   router
 });
 
-Vue.prototype.$eventHub = new Vue();
 Vue.config.productionTip = false;
 
 /* eslint-disable no-new */

@@ -1,27 +1,26 @@
 <template>
   <div>
-    {{ test }}
+    {{ item.golfclubNameEng }}
   </div>
 </template>
 
 <script>
-let self = this;
+let self;
 export default {
   name: 'DataView',
   data () {
     return {
-      test: '1234',
+      item: [],
       msg: '  - DataView'
     };
   },
   created () {
+    console.log(this.$bus);
     this.$bus.on('view-data', this.view);
   },
   methods: {
     view (val) {
-      this.test = val;
-       console.log(this);
-      this.$bus.off('view-data', this.view);
+      console.log(val);
     }
   }
 };

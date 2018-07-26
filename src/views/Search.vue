@@ -21,11 +21,13 @@
 import auth from '@/auth';
 import store from '@/store';
 import AppList from '@/views/List';
+import * as VTextField from 'vuetify/es5/components/VTextField';
 
 export default {
   name: 'Main',
   components: {
-    'app-list': AppList,
+    ...VTextField,
+    AppList
   },
   data () {
     return {

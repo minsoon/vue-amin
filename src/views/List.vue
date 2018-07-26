@@ -83,8 +83,8 @@ export default {
       */
     },
     view (item) {
-      this.$router.push('/dataView');
-      this.$bus.emit('view-data', item);
+      console.log(item);
+      // this.$router.push('/dataView');
       // this.$eventHub.$emit('viewData', item);
     }
   }

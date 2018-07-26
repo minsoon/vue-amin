@@ -206,8 +206,21 @@
 </template>
 
 <script>
+import * as VCombobox from 'vuetify/es5/components/VCombobox';
+import * as VCheckbox from 'vuetify/es5/components/VCheckbox';
+import * as VRadioGroup from 'vuetify/es5/components/VRadioGroup';
+import * as VSwitch from 'vuetify/es5/components/VSwitch';
+import * as VTextField from 'vuetify/es5/components/VTextField';
+
 export default {
   name: 'VuetifyGuide',
+  components: {
+    ...VCombobox,
+    ...VCheckbox,
+    ...VRadioGroup,
+    ...VSwitch,
+    ...VTextField
+  },
   data () {
     return {
       msg: ' - VuetifyGuide',

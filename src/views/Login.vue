@@ -46,54 +46,60 @@
 </template>
 
 <script>
-  import auth from '@/auth';
+import auth from '@/auth';
+import * as VForm from 'vuetify/es5/components/VForm';
+import * as VTextField from 'vuetify/es5/components/VTextField';
 
-  export default {
-    name: 'LoginTest',
-    data () {
-      return {
-        msg: 'login',
-        valid: true,
-        name: '',
-        nameRules: [
-          v => !!v || 'Name is required',
-          v => (v && v.length <= 10) || 'Name must be less than 10 characters'
-        ],
-        pwShow: false,
-        password: '',
-        passwordRules: {
-          required: value => !!value || 'Required.',
-          min: v => v.length >= 8 || 'Min 8 characters'
-        }
-      };
-    },
-    methods: {
-      submit () {
-        if (this.$refs.form.validate()) {
-          let $router = this.$router;
-          auth.login({
-            id: this.name,
-            password: this.password
-          }).then(function (data) {
-            $router.push({ name: 'List' });
-          }, function () {
-            alert('로그인 에러');
-            /*
-             * TODO : ERROR 처리는 어떻게 표현 할지 고민.
-             *   - 알림 모듈 생성하여 관리?
-             * */
-          });
-        } else {
-          alert('id. pw 입력');
-        }
-      },
-      clear () {
-        // this.$refs.form.reset();
-        this.name = '';
-        this.password = '';
+export default {
+  name: 'LoginTest',
+  components: {
+    ...VForm,
+    ...VTextField
+  },
+  data () {
+    return {
+      msg: 'login',
+      valid: true,
+      name: '',
+      nameRules: [
+        v => !!v || 'Name is required',
+        v => (v && v.length <= 10) || 'Name must be less than 10 characters'
+      ],
+      pwShow: false,
+      password: '',
+      passwordRules: {
+        required: value => !!value || 'Required.',
+        min: v => v.length >= 8 || 'Min 8 characters'
       }
+    };
+  },
+  methods: {
+    submit () {
+      if (this.$refs.form.validate()) {
+        let $router = this.$router;
+        auth.login({
+          id: this.name,
+          password: this.password
+        }).then(function (data) {
+          $router.push({ name: 'List' });
+        }, function () {
+          alert('로그인 에러');
+          /*
+           * TODO : ERROR 처리는 어떻게 표현 할지 고민.
+           *   - 알림 모듈 생성하여 관리?
+           * */
+        });
+      } else {
+        alert('id. pw 입력');
+      }
+    },
+    clear () {
+      // this.$refs.form.reset();
+      this.name = '';
+      this.password = '';
     }
-  };
+  }
+};
 </script>
 
 <style lang="less">

@@ -67,6 +67,7 @@ import LineExample from './example/Line.js';
 import PolarAreaExample from './example/PolarArea.js';
 import RadarExample from './example/Rabar.js';
 import ScatterExample from './example/Scatter.js';
+import * as VTabs from 'vuetify/es5/components/VTabs';
 
 export default {
   name: 'Chart',
@@ -75,7 +76,8 @@ export default {
     LineExample,
     PolarAreaExample,
     RadarExample,
-    ScatterExample
+    ScatterExample,
+    ...VTabs
   },
   data () {
     return {
