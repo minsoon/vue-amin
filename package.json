@@ -42,7 +42,6 @@
     "routes": "^2.1.0",
     "vue": "^2.5.2",
     "vue-analytics": "^5.12.2",
-    "vue-bus": "^1.1.0",
     "vue-chartjs": "^3.3.2",
     "vue-js-cookie": "^2.1.0",
     "vue-router": "^3.0.1",

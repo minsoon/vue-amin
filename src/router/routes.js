@@ -13,7 +13,7 @@ const routes = [
     component: login,
     title: 'Login',
     layout: 'LayoutPubilc',
-    isPublic: false
+    isPublic: true
   },
   {
     name: 'Search',
@@ -33,7 +33,7 @@ const routes = [
   },
   {
     name: 'DataView',
-    path: '/dataView',
+    path: '/dataView/:id',
     component: dataview,
     title: 'DataView',
     layout: 'LayoutDefault',
@@ -57,6 +57,7 @@ const routes = [
   },
   {
     path: '*',
+    name: '404',
     redirect: '/404',
     component: error,
     title: '404',

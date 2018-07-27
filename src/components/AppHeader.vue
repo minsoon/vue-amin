@@ -87,10 +87,9 @@ export default {
   },
   methods: {
     logout () {
-      var $router = this.$router;
-      auth.logout().then(function () {
-        $router.push('login');
-      }, function () {
+      auth.logout().then((data) => {
+        this.$router.push({ name: 'Login' });
+      }).catch((error) => {
         alert('로그아웃 에러');
         /*
          * TODO : ERROR 처리는 어떻게 표현 할지 고민.

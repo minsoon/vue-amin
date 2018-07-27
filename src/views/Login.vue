@@ -76,13 +76,14 @@ export default {
   methods: {
     submit () {
       if (this.$refs.form.validate()) {
-        let $router = this.$router;
         auth.login({
           id: this.name,
           password: this.password
-        }).then(function (data) {
-          $router.push({ name: 'List' });
-        }, function () {
+        }).then((data) => {
+          var queryUrl = this.$route.query.redirect;
+          if (queryUrl) return this.$router.push(queryUrl);
+          this.$router.push({ name: 'List' });
+        }).catch((error) => {
           alert('로그인 에러');
           /*
            * TODO : ERROR 처리는 어떻게 표현 할지 고민.

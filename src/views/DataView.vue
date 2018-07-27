@@ -5,7 +5,8 @@
 </template>
 
 <script>
-let self;
+import store from '@/store';
+
 export default {
   name: 'DataView',
   data () {
@@ -15,13 +16,8 @@ export default {
     };
   },
   created () {
-    console.log(this.$bus);
-    this.$bus.on('view-data', this.view);
-  },
-  methods: {
-    view (val) {
-      console.log(val);
-    }
+    // console.log(store.state.myRounds);
+    // console.log(this.$route.params.id);
   }
 };
 </script>
