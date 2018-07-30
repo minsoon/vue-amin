@@ -1,9 +1,34 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Vuetify from 'vuetify';
+import {
+  Vuetify,
+  VApp,
+  VCard,
+  VIcon,
+  VList,
+  VBtn,
+  VFooter,
+  VToolbar,
+  VNavigationDrawer
+} from 'vuetify';
+import { Ripple } from 'vuetify/es5/directives';
 
 Vue.use(Router);
-Vue.use(Vuetify);
+Vue.use(Vuetify, {
+  components: {
+    VApp,
+    VCard,
+    VIcon,
+    VList,
+    VBtn,
+    VFooter,
+    VToolbar,
+    VNavigationDrawer
+  },
+  directives: {
+    Ripple
+  }
+});
 
 Vue.config.silent = true;
 Vue.config.productionTip = false;

@@ -1,7 +1,7 @@
 <template>
   <div class="list">
     <div v-for="(item, index) in items" :key="index" class="item">
-      <router-link :to="'/dataView/' + item.roundSeq">
+      <router-link :to="'/view/' + item.roundSeq">
         <v-card dark>
           <v-card-text>
             <v-icon>widgets</v-icon> {{ item.golfclubNameEng }}

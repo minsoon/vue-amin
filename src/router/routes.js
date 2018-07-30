@@ -2,7 +2,7 @@ import error from '@/views/Page404';
 import login from '@/views/Login';
 import search from '@/views/Search';
 import list from '@/views/List';
-import dataview from '@/views/dataview';
+import view from '@/views/View';
 import chart from '@/views/chart/index';
 import vuetifyGuide from '@/views/VuetifyGuide';
 
@@ -32,10 +32,10 @@ const routes = [
     isPublic: true
   },
   {
-    name: 'DataView',
-    path: '/dataView/:id',
-    component: dataview,
-    title: 'DataView',
+    name: 'View',
+    path: '/view/:id',
+    component: view,
+    title: 'View',
     layout: 'LayoutDefault',
     isPublic: true
   },

@@ -36,6 +36,7 @@ const router = new Router({
     name: route.name,
     path: route.path,
     component: route.component,
+    redirect: route.redirect,
     beforeEnter: (to, from, next) => {
       store.state.title = route.title;
       store.dispatch('updateLayout', route.layout);
