@@ -1,12 +1,8 @@
 <template>
   <v-footer fixed align-end height="auto">
-    <v-flex
-      lighten-2
-      py-3
-      text-xs-center
-    >
+    <div class="footer">
       &copy; 2018 — <strong>McVueSimple</strong>
-    </v-flex>
+    </div>
   </v-footer>
 </template>
 
@@ -23,3 +19,11 @@ export default {
   }
 };
 </script>
+
+<style lang="less">
+  @import '../less/mixin';
+  .footer {
+    width:100%;
+    .text-center;
+  }
+</style>

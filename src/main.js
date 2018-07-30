@@ -6,7 +6,6 @@ import store from './store';
 import {
   Vuetify,
   VApp,
-  VGrid,
   VCard,
   VIcon,
   VList,
@@ -25,7 +24,6 @@ import App from './App';
 Vue.use(Vuetify, {
   components: {
     VApp,
-    VGrid,
     VCard,
     VIcon,
     VList,

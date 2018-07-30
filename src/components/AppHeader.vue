@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="header">
     <v-toolbar app fixed clipped-left>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>{{ title }}</v-toolbar-title>
@@ -109,6 +109,9 @@ export default {
 <style lang="less">
   .nav {
     .v-list__tile {
+      .v-list__tile__action, .v-list__tile__avatar {
+        min-width: 44px;
+      }
       a {
         display:flex;
         text-decoration: blink;

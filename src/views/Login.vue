@@ -1,6 +1,6 @@
 <template>
-  <v-layout align-center justify-center row fill-height>
-    <v-card class="loginBox">
+  <div class="loginBox">
+    <div class="box">
       <v-form ref="form" v-model="valid" lazy-validation>
         <v-text-field
           v-model="name"
@@ -41,8 +41,8 @@
           </v-btn>
         </div>
       </v-form>
-    </v-card>
-  </v-layout>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -106,11 +106,23 @@ export default {
 <style lang="less">
   @import '../less/mixin';
   .loginBox {
-    padding:20px;
-    width:80%;
-  .submitBtn {
-    text-align:center;
-  }
+    position:absolute;
+    top:50%;
+    left:0;
+    margin-top:-112px;
+    padding:0 20px;
+    width:100%;
+    .box {
+      margin:0 auto;
+      padding:20px;
+      width:100%;
+      max-width:500px;
+      background-color:#464545;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+      .submitBtn {
+        text-align:center;
+      }
+    }
   }
 </style>
 

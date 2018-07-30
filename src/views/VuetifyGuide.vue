@@ -1,6 +1,5 @@
 <template>
-  <v-container>
-    <div class="guideBox">
+  <div class="guideBox">
       <div class="tit"><span>BUTTON</span></div>
       <div class="box">
         <v-btn>Normal</v-btn>
@@ -99,68 +98,42 @@
 
       <div class="tit"><span>Text field</span></div>
       <div class="box">
-
-        <v-layout row wrap>
-
-          <v-flex xs12 sm6 md3>
-            <v-text-field
-              label="Regular"
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6 md3>
-            <v-text-field
-              label="Regular"
-              placeholder="Placeholder"
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6 md3>
-            <v-text-field
-              label="Solo"
-              solo
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6 md3>
-            <v-text-field
-              label="Solo"
-              placeholder="Placeholder"
-              solo
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6 md3>
-            <v-text-field
-              label="Box"
-              box
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6 md3>
-            <v-text-field
-              label="Box"
-              placeholder="Placeholder"
-              box
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6 md3>
-            <v-text-field
-              label="Outline"
-              outline
-            ></v-text-field>
-          </v-flex>
-
-          <v-flex xs12 sm6 md3>
-            <v-text-field
-              label="Outline"
-              placeholder="Placeholder"
-              outline
-            ></v-text-field>
-          </v-flex>
-        </v-layout>
-
+        <div class="inputBox">
+          <v-text-field
+            label="Regular"
+          ></v-text-field>
+          <v-text-field
+            label="Regular"
+            placeholder="Placeholder"
+          ></v-text-field>
+          <v-text-field
+            label="Solo"
+            solo
+          ></v-text-field>
+          <v-text-field
+            label="Solo"
+            placeholder="Placeholder"
+            solo
+          ></v-text-field>
+          <v-text-field
+            label="Box"
+            box
+          ></v-text-field>
+          <v-text-field
+            label="Box"
+            placeholder="Placeholder"
+            box
+          ></v-text-field>
+          <v-text-field
+            label="Outline"
+            outline
+          ></v-text-field>
+          <v-text-field
+            label="Outline"
+            placeholder="Placeholder"
+            outline
+          ></v-text-field>
+        </div>
         <div class="txtBox">
           Vuetify Text field Url : <a href="https://vuetifyjs.com/en/components/text-fields" target="_blank">https://vuetifyjs.com/en/components/text-fields</a>
         </div>
@@ -168,7 +141,7 @@
 
       <div class="tit"><span>Selection controls</span></div>
       <div class="box">
-        <v-layout row wrap>
+        <div>
           <v-checkbox
             :label="`Checkbox 1: ${checkbox[0].toString()}`"
             v-model="checkbox[0]"
@@ -184,25 +157,24 @@
             v-model="checkbox[2]"
             hide-details
           ></v-checkbox>
-        </v-layout>
+        </div>
 
         <v-radio-group v-model="radio" row>
           <v-radio label="Option 1" value="radio-1"></v-radio>
           <v-radio label="Option 2" value="radio-2"></v-radio>
         </v-radio-group>
 
-        <v-layout row>
+        <div>
           <v-switch :label="`Switch 1: ${switch1.toString()}`" v-model="switch1"></v-switch>
           <v-switch :label="`Switch 2: ${switch2.toString()}`" v-model="switch2"></v-switch>
-        </v-layout>
+        </div>
 
         <div class="txtBox">
           Vuetify Selection controls Url : <a href="https://vuetifyjs.com/en/components/selection-controls" target="_blank">https://vuetifyjs.com/en/components/selection-controls</a>
         </div>
       </div>
 
-    </div>
-  </v-container>
+  </div>
 </template>
 
 <script>

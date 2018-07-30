@@ -5,7 +5,6 @@
   "author": "mcsung85 <mcsung85@gmail.com>",
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
-    "start": "npm run dev",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js",
     "test": "npm run unit",
     "build": "node build/build.js"
@@ -43,7 +42,6 @@
     "vue": "^2.5.2",
     "vue-analytics": "^5.12.2",
     "vue-chartjs": "^3.3.2",
-    "vue-js-cookie": "^2.1.0",
     "vue-router": "^3.0.1",
     "vuetify": "^1.1.8",
     "vuetify-loader": "^0.2.0",
@@ -51,10 +49,8 @@
     "vuex-router-sync": "^5.0.0"
   },
   "devDependencies": {
-    "@vue/test-utils": "^1.0.0-beta.20",
     "autoprefixer": "^7.1.2",
     "avoriaz": "^6.3.0",
-    "axios": "^0.17.1",
     "babel-core": "^6.22.1",
     "babel-loader": "^7.1.1",
     "babel-plugin-istanbul": "^4.1.1",
@@ -130,7 +126,6 @@
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",
     "vue-test-utils": "^1.0.0-beta.11",
-    "vuex": "^3.0.1",
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.9.1",
