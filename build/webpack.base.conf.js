@@ -35,6 +35,7 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      'chart.js': 'chart.js/dist/Chart.js',
       '@': resolve('src'),
     }
   },
@@ -45,6 +46,17 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/,
+        resourceQuery: /vuetify-preload/,
+        use: [
+          'vuetify-loader/progressive-loader',
+          {
+            loader: 'url-loader',
+            options: { limit: 8000 }
+          }
+        ]
       },
       {
         test: /\.js$/,

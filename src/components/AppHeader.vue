@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="header">
     <v-toolbar app fixed clipped-left>
       <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
       <v-toolbar-title>{{ title }}</v-toolbar-title>
@@ -87,10 +87,9 @@ export default {
   },
   methods: {
     logout () {
-      var $router = this.$router;
-      auth.logout().then(function () {
-        $router.push('login');
-      }, function () {
+      auth.logout().then((data) => {
+        this.$router.push({ name: 'Login' });
+      }).catch((error) => {
         alert('로그아웃 에러');
         /*
          * TODO : ERROR 처리는 어떻게 표현 할지 고민.
@@ -110,6 +109,9 @@ export default {
 <style lang="less">
   .nav {
     .v-list__tile {
+      .v-list__tile__action, .v-list__tile__avatar {
+        min-width: 44px;
+      }
       a {
         display:flex;
         text-decoration: blink;

@@ -6,21 +6,29 @@ import Cookies from 'js-cookie';
 
 Vue.use(Router);
 
-function guardRoute (to, from, next) {
-  // work-around to get to the Vuex store (as of Vue 2.0)
+const guardRoute = (to, from, next) => {
   let accessToken = store.state.user.accessToken;
   let isUser = Cookies.get('isUser') ? JSON.parse(Cookies.get('isUser')) : undefined;
+  let route = routes.find(d => d.name === from.name);
 
-  if (!accessToken && isUser) {
-    store.dispatch('updateIsUser', isUser);
-    accessToken = store.state.user.accessToken;
-  }
-
-  if (!accessToken) {
-    next({ path: '/login' });
+  if (isUser) {
+    if (!accessToken) store.dispatch('updateIsUser', isUser);
+    if (to.path.indexOf('/login') === 0 && route) {
+      store.state.title = route.title;
+      store.dispatch('updateLayout', route.layout);
+      return next(from.path);
+    }
+    return next();
+  } else {
+    if (to.path !== '/login') {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      });
+    }
   }
   next();
-}
+};
 
 const router = new Router({
   base: '/app',

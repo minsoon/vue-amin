@@ -1,21 +1,21 @@
 <template>
-  <v-container grid-list-xl>
-    <v-layout column reverse fill-height>
-      <v-flex v-for="(item, index) in items" :key="index" @click="view(item)" class="item" xs12>
+  <div class="list">
+    <div v-for="(item, index) in items" :key="index" class="item">
+      <router-link :to="'/dataView/' + item.roundSeq">
         <v-card dark>
           <v-card-text>
             <v-icon>widgets</v-icon> {{ item.golfclubNameEng }}
           </v-card-text>
         </v-card>
-      </v-flex>
-      <v-flex
-        class="notItems"
-        v-if="items.length === 0 && init"
-      >
-        검색된 골프장이 없습니다.
-      </v-flex>
-    </v-layout>
-  </v-container>
+      </router-link>
+    </div>
+    <div
+      class="notItems"
+      v-if="items.length === 0 && init"
+    >
+      검색된 골프장이 없습니다.
+    </div>
+  </div>
 </template>
 
 <script>
@@ -71,7 +71,9 @@ export default {
         'page': 0,
         'size': 100,
         'isDelete': 0
-      }, 'myRounds').then((response) => {
+      }, {
+        name: 'myRounds'
+      }).then((response) => {
         if (response.status === 200) {
           this.items = response.data.myRoundDtoList;
           console.log(JSON.stringify(this.items));
@@ -81,17 +83,18 @@ export default {
         console.log(error);
       });
       */
-    },
-    view (item) {
-      this.$router.push('/dataView');
-      this.$bus.emit('view-data', item);
-      // this.$eventHub.$emit('viewData', item);
     }
   }
 };
 </script>
 
-<style>
+<style lang="less">
+  @import '../less/mixin';
+  .list {
+    .item {
+      padding-bottom: 15px;
+    }
+  }
   .notItems {
     padding:200px 0;
     text-align:center;

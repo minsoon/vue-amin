@@ -1,13 +1,13 @@
 <template>
-  <div>
+  <div id="wrap">
     <!-- @slot Use this slot header -->
     <app-header />
     <!-- @slot Use this slot content -->
-    <v-content>
+    <div class="container">
       <div class="content">
         <router-view/>
       </div>
-    </v-content>
+    </div>
     <!-- @slot Use this slot footer -->
     <app-footer />
   </div>
@@ -39,10 +39,3 @@ export default {
   }
 };
 </script>
-
-<style lang="less">
-  @import '../../less/mixin';
-  .content {
-    padding-bottom: 50px;
-  }
-</style>
