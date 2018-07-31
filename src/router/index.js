@@ -40,7 +40,7 @@ const router = new Router({
     beforeEnter: (to, from, next) => {
       store.state.title = route.title;
       store.dispatch('updateLayout', route.layout);
-      if (route.isPublic) return guardRoute(to, from, next);
+      if (!route.isPublic) return guardRoute(to, from, next);
       next();
     }
   }))

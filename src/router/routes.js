@@ -13,7 +13,7 @@ const routes = [
     component: login,
     title: 'Login',
     layout: 'LayoutPubilc',
-    isPublic: true
+    isPublic: false
   },
   {
     name: 'Search',
@@ -21,7 +21,7 @@ const routes = [
     component: search,
     title: 'Search',
     layout: 'LayoutDefault',
-    isPublic: true
+    isPublic: false
   },
   {
     name: 'List',
@@ -29,7 +29,7 @@ const routes = [
     component: list,
     title: 'List',
     layout: 'LayoutDefault',
-    isPublic: true
+    isPublic: false
   },
   {
     name: 'View',
@@ -37,7 +37,7 @@ const routes = [
     component: view,
     title: 'View',
     layout: 'LayoutDefault',
-    isPublic: true
+    isPublic: false
   },
   {
     name: 'VuetifyGuide',
@@ -45,7 +45,7 @@ const routes = [
     component: vuetifyGuide,
     title: 'Vuetify Guide',
     layout: 'LayoutDefault',
-    isPublic: true
+    isPublic: false
   },
   {
     name: 'Chart',
@@ -53,7 +53,7 @@ const routes = [
     component: chart,
     title: 'Chart',
     layout: 'LayoutDefault',
-    isPublic: true
+    isPublic: false
   },
   {
     path: '*',
@@ -62,7 +62,7 @@ const routes = [
     component: error,
     title: '404',
     layout: 'LayoutPubilc',
-    isPublic: false
+    isPublic: true
   }
 ];
 
