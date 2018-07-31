@@ -43,7 +43,14 @@ const router = new Router({
       if (!route.isPublic) return guardRoute(to, from, next);
       next();
     }
-  }))
+  })),
+  scrollBehavior (to, from, savedPosition) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(savedPosition ? savedPosition : { x: 0, y: 0 });
+      });
+    });
+  }
 });
 
 export default router;
