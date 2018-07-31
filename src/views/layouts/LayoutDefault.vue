@@ -17,12 +17,6 @@
 import AppHeader from '@/components/AppHeader';
 import AppFooter from '@/components/AppFooter';
 
-/**
- * This is an example of creating a reusable grid component and using it with external data.
- * @version 1.0.5
- * @author [Rafael](https://github.com/rafaesc92)
- * @since Version 1.0.1
- */
 export default {
   name: 'LayoutDefault',
   components: {

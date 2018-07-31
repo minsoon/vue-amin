@@ -7,8 +7,13 @@
 </template>
 
 <script>
+import * as VFooter from 'vuetify/es5/components/VFooter';
+
 export default {
   name: 'AppFooter',
+  components: {
+    ...VFooter
+  },
   data () {
     return {
       msg: '- AppFooter'
