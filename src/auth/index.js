@@ -39,10 +39,10 @@ export default {
       });
     });
   },
-  get (url, params = {}, stateName) {
+  get (url, params = {}, setOption = {}) {
     return new Promise((resolve, reject) => {
-      if (stateName && store.state[stateName]) {
-        resolve(store.state[stateName]);
+      if (store.state[setOption.name]) {
+        resolve(store.state[setOption.name]);
       } else {
         axios({
           method: 'get',
@@ -53,13 +53,13 @@ export default {
           },
           params: params
         }).then((response) => {
-          resolve(response);
-          if (stateName && !store.state[stateName]) {
+          if (setOption && setOption.name && !store.state[setOption.name]) {
             store.dispatch('addState', {
-              name: stateName,
+              name: setOption.name,
               data: response
             });
           }
+          resolve(response);
         }).catch((error) => {
           reject(error);
         });
@@ -73,7 +73,7 @@ export default {
         url: apiDomain + url,
         headers: {
           'appId': store.state.user.appId,
-          'gfsSessionId': store.state.user.accessToken
+          'accessToken': store.state.user.accessToken
         },
         data: params
       }).then((response) => {
@@ -90,7 +90,7 @@ export default {
         url: apiDomain + url,
         headers: {
           'appId': store.state.user.appId,
-          'gfsSessionId': store.state.user.accessToken
+          'accessToken': store.state.user.accessToken
         },
         data: params
       }).then((response) => {
