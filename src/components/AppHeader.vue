@@ -53,13 +53,10 @@ export default {
   },
   data () {
     return {
-      msg: '- AppHeader',
       drawer: false,
       title: '',
       user: {}
     };
-  },
-  created () {
   },
   methods: {
     logout () {

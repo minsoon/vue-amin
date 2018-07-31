@@ -1,6 +1,6 @@
 <template>
   <div class="viewBox">
-    {{ msg }}
+    {{ view }}
   </div>
 </template>
 
@@ -9,11 +9,8 @@ export default {
   name: 'View',
   data () {
     return {
-      msg: '- view'
+      view: 'view'
     };
-  },
-  created () {
-    console.log(this.msg);
   }
 };
 </script>

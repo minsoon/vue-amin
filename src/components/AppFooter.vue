@@ -13,14 +13,6 @@ export default {
   name: 'AppFooter',
   components: {
     ...VFooter
-  },
-  data () {
-    return {
-      msg: '- AppFooter'
-    };
-  },
-  created () {
-    console.log(this.msg);
   }
 };
 </script>

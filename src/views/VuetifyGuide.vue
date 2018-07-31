@@ -195,7 +195,6 @@ export default {
   },
   data () {
     return {
-      msg: ' - VuetifyGuide',
       select: '',
       items: [
         { id: 1, name: '1combobox' },
@@ -210,11 +209,6 @@ export default {
       radioGroup: 1,
       switch1: true
     };
-  },
-  props: {
-  },
-  created () {
-    console.log(this.msg);
   },
   computed: {
     filteredList() {

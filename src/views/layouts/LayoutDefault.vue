@@ -22,14 +22,6 @@ export default {
   components: {
     'app-header': AppHeader,
     'app-footer': AppFooter
-  },
-  data () {
-    return {
-      msg: ':::: LayoutDefault ::::'
-    };
-  },
-  created () {
-    console.log(this.msg);
   }
 };
 </script>

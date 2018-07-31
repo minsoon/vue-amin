@@ -20,14 +20,13 @@ import AppList from '@/views/List';
 import * as VTextField from 'vuetify/es5/components/VTextField';
 
 export default {
-  name: 'Main',
+  name: 'Search',
   components: {
     ...VTextField,
     AppList
   },
   data () {
     return {
-      msg: '  - main',
       searchKeyword: ''
     };
   },

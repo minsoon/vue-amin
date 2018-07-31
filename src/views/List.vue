@@ -34,7 +34,6 @@ export default {
   data () {
     return {
       init: false,
-      msg: '  - list',
       items: data,
       item: null
     };

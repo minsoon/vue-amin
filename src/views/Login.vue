@@ -51,14 +51,13 @@ import * as VForm from 'vuetify/es5/components/VForm';
 import * as VTextField from 'vuetify/es5/components/VTextField';
 
 export default {
-  name: 'LoginTest',
+  name: 'Login',
   components: {
     ...VForm,
     ...VTextField
   },
   data () {
     return {
-      msg: 'login',
       valid: true,
       name: '',
       nameRules: [
