@@ -1,15 +1,14 @@
 <template>
   <div class="viewBox">
-    {{ view }}
+    {{ msg }}
   </div>
 </template>
 
 <script>
 export default {
-  name: 'View',
   data () {
     return {
-      view: 'view'
+      msg: 'view'
     };
   }
 };

@@ -79,9 +79,7 @@ export default {
           id: this.name,
           password: this.password
         }).then((data) => {
-          var queryUrl = this.$route.query.redirect;
-          if (queryUrl) return this.$router.push(queryUrl);
-          this.$router.push({ name: 'List' });
+          this.$router.replace(this.$route.query.redirect || '/list');
         }).catch((error) => {
           alert('로그인 에러');
           /*
