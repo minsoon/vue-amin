@@ -7,31 +7,36 @@ let error = 'error';
 export default {
   login (params = {}) {
     return new Promise((resolve, reject) => {
-      var data = {
-        user: {
+      try {
+        var data = {
           accessToken: 'tokenKey',
-          appId: process.env.APP_ID,
-          name: '성민창',
-          email: 'mcsung85@gmail.com',
-          id: params.id
-        }
-      };
-      store.dispatch('updateIsUser', data);
-      setTimeout(function () {
-        if (store.state.user.accessToken) {
-          resolve(store.state.user);
-        } else {
-          reject(error);
-        }
-      });
+          user: {
+            appId: process.env.APP_ID,
+            name: '성민창',
+            email: 'mcsung85@gmail.com',
+            id: params.id
+          }
+        };
+        store.dispatch('updateUserInfo', data);
+        setTimeout(() => {
+          if (store.state.accessToken) {
+            resolve(store.state.user);
+          } else {
+            reject(error);
+          }
+        });
+      } catch (e) {
+        console.log(e);
+        reject(e);
+      }
     });
   },
   logout () {
     // store 로그인 정보 삭제 후 확인.
     return new Promise((resolve, reject) => {
-      store.dispatch('clearIsUser');
-      setTimeout(function () {
-        if (!store.state.user.accessToken) {
+      store.dispatch('clearUserInfo');
+      setTimeout(() => {
+        if (!store.state.accessToken) {
           resolve();
         } else {
           reject(error);
@@ -49,7 +54,7 @@ export default {
           url: apiDomain + url,
           headers: {
             'appId': store.state.user.appId,
-            'accessToken': store.state.user.accessToken
+            'accessToken': store.state.accessToken
           },
           params: params
         }).then((response) => {
@@ -73,7 +78,7 @@ export default {
         url: apiDomain + url,
         headers: {
           'appId': store.state.user.appId,
-          'accessToken': store.state.user.accessToken
+          'accessToken': store.state.accessToken
         },
         data: params
       }).then((response) => {
@@ -90,7 +95,7 @@ export default {
         url: apiDomain + url,
         headers: {
           'appId': store.state.user.appId,
-          'accessToken': store.state.user.accessToken
+          'accessToken': store.state.accessToken
         },
         data: params
       }).then((response) => {

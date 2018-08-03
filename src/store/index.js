@@ -6,10 +6,9 @@ import actions from './actions';
 Vue.use(Vuex);
 
 const defaults = {
-  title: '',
   layout: 'LayoutDefault',
+  accessToken: '',
   user: {
-    accessToken: '',
     appId: '2',
     name: '',
     email: '',
