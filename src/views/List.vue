@@ -2,11 +2,9 @@
   <div class="list">
     <div v-for="(item, index) in items" :key="index" class="item">
       <router-link :to="'/view/' + item.roundSeq">
-        <v-card dark>
-          <v-card-text>
-            <v-icon>widgets</v-icon> {{ item.golfclubNameEng }}
-          </v-card-text>
-        </v-card>
+        <p>
+          <v-icon>widgets</v-icon> {{ item.golfclubNameEng }}
+        </p>
       </router-link>
     </div>
     <div
@@ -91,7 +89,18 @@ export default {
   @import '../less/mixin';
   .list {
     .item {
-      padding-bottom: 15px;
+      margin-bottom:20px;
+      background-color: #424242;
+      border-radius: 3px;
+      box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+      a {
+        display: block;
+        p {
+          padding:0 20px;
+          line-height: 70px;
+          color: #fff;
+        }
+      }
     }
   }
   .notItems {
