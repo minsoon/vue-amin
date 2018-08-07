@@ -41,7 +41,7 @@ export default {
     LineExample,
     PolarAreaExample,
     RadarExample,
-    ScatterExample,
+    ScatterExample
   },
   data () {
     return {
