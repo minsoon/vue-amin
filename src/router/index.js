@@ -2,47 +2,43 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import routes from './routes';
 import store from '@/store';
-import Cookies from 'js-cookie';
-
 Vue.use(Router);
 
 const guardRoute = (to, from, next) => {
-  let accessToken = store.state.user.accessToken;
-  let isUser = Cookies.get('isUser') ? JSON.parse(Cookies.get('isUser')) : undefined;
-  let route = routes.find(d => d.name === from.name);
-
-  if (isUser) {
-    if (!accessToken) store.dispatch('updateIsUser', isUser);
-    if (to.path.indexOf('/login') === 0 && route) {
-      store.state.title = route.title;
-      store.dispatch('updateLayout', route.layout);
-      return next(from.path);
-    }
-    return next();
+  let token = window.localStorage.getItem('accessToken') ? window.localStorage.getItem('accessToken') : undefined;
+  if (token) {
+    next();
   } else {
-    if (to.path !== '/login') {
-      next({
-        path: '/login',
-        query: { redirect: to.fullPath }
-      });
-    }
+    router.push({
+      path: '/login',
+      query: {
+        redirect: to.fullPath
+      }
+    });
   }
-  next();
 };
 
 const router = new Router({
   base: '/app',
-  routes: routes.map(route => ({
-    name: route.name,
-    path: route.path,
-    component: route.component,
-    beforeEnter: (to, from, next) => {
-      store.state.title = route.title;
-      store.dispatch('updateLayout', route.layout);
-      if (route.isPublic) return guardRoute(to, from, next);
-      next();
-    }
-  }))
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        if (savedPosition) {
+          resolve(savedPosition);
+        } else {
+          resolve({ x: 0, y: 0 });
+        }
+      });
+    });
+  }
+});
+router.beforeEach((to, from, next) => {
+  store.dispatch('updateLayout', to.meta.layout);
+  if (!to.meta.isPublic) {
+    return guardRoute(to, from, next);
+  }
+  next();
 });
 
 export default router;

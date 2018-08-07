@@ -5,14 +5,8 @@ import router from './router';
 import store from './store';
 import {
   Vuetify,
-  VApp,
-  VCard,
   VIcon,
-  VList,
-  VBtn,
-  VFooter,
-  VToolbar,
-  VNavigationDrawer
+  VBtn
 } from 'vuetify';
 import { Ripple } from 'vuetify/es5/directives';
 import VueAnalytics from 'vue-analytics';
@@ -23,14 +17,8 @@ import App from './App';
 
 Vue.use(Vuetify, {
   components: {
-    VApp,
-    VCard,
     VIcon,
-    VList,
-    VBtn,
-    VFooter,
-    VToolbar,
-    VNavigationDrawer
+    VBtn
   },
   directives: {
     Ripple

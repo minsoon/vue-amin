@@ -1,89 +1,62 @@
 <template>
   <div id="header">
     <v-toolbar app fixed clipped-left>
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
-      <v-toolbar-title>{{ title }}</v-toolbar-title>
+      <div class="header">
+        <h1>{{ title }}</h1>
+        <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      </div>
     </v-toolbar>
-    <v-navigation-drawer
-      clipped
-      fixed
-      v-model="drawer"
-      app
-    >
-      <v-list class="nav" dense>
-        <v-list-tile>
-          <router-link to="/list">
-            <v-list-tile-action>
-              <v-icon>dashboard</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>List</v-list-tile-title>
-            </v-list-tile-content>
-          </router-link>
-        </v-list-tile>
-        <v-list-tile>
-          <router-link to="/search">
-            <v-list-tile-action>
-              <v-icon>dashboard</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>Search</v-list-tile-title>
-            </v-list-tile-content>
-          </router-link>
-        </v-list-tile>
-        <v-list-tile>
-          <router-link to="/chart">
-            <v-list-tile-action>
-              <v-icon>dashboard</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>chart</v-list-tile-title>
-            </v-list-tile-content>
-          </router-link>
-        </v-list-tile>
-        <v-list-tile>
-          <router-link to="/vuetifyGuide">
-            <v-list-tile-action>
-              <v-icon>dashboard</v-icon>
-            </v-list-tile-action>
-            <v-list-tile-content>
-              <v-list-tile-title>vuetify guide</v-list-tile-title>
-            </v-list-tile-content>
-          </router-link>
-        </v-list-tile>
-        <v-list-tile @click="logout()">
-          <v-list-tile-action>
-            <v-icon>settings</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-content>
-            <v-list-tile-title>Logout</v-list-tile-title>
-          </v-list-tile-content>
-        </v-list-tile>
-      </v-list>
+    <v-navigation-drawer clipped fixed app v-model="drawer">
+      <div class="nav">
+        <ul>
+          <li>
+            <router-link to="/list">
+              <v-icon>dashboard</v-icon> List
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/search">
+              <v-icon>dashboard</v-icon> Search
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/chart">
+              <v-icon>dashboard</v-icon> Chart
+            </router-link>
+          </li>
+          <li>
+            <router-link to="/vuetifyGuide">
+              <v-icon>dashboard</v-icon> Vuetify Guide
+            </router-link>
+          </li>
+          <li>
+              <a @click="logout()">
+                <v-icon>dashboard</v-icon> Logout
+              </a>
+          </li>
+        </ul>
+      </div>
     </v-navigation-drawer>
   </div>
 </template>
 
 <script>
 import auth from '@/auth';
-import store from '@/store';
+import * as VToolbar from 'vuetify/es5/components/VToolbar';
+import * as VNavigationDrawer from 'vuetify/es5/components/VNavigationDrawer';
 
 export default {
   name: 'AppHeader',
+  components: {
+    ...VToolbar,
+    ...VNavigationDrawer
+  },
   data () {
     return {
-      msg: '- AppHeader',
       drawer: false,
-      title: store.state.title,
+      title: '',
       user: {}
     };
-  },
-  created () {
-    this.user = store.state.user;
-    store.watch((state) => state.title, (newValue, oldValue) => {
-      this.title = newValue;
-    });
-    console.log(this.msg);
   },
   methods: {
     logout () {
@@ -96,27 +69,36 @@ export default {
          *   - 알림 모듈 생성하여 관리?
          * */
       });
-      store.dispatch('clearIsUser');
-      // $router.push('login');
-      // auth.logout().then(function () {);
-      // }, function () {
-      // });
     }
   }
 };
 </script>
 
 <style lang="less">
+  @import '../less/mixin';
+  .header {
+    position: relative;
+    width:100%;
+    h1 {
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      line-height:56px;
+      .text-center;
+    }
+  }
   .nav {
-    .v-list__tile {
-      .v-list__tile__action, .v-list__tile__avatar {
-        min-width: 44px;
-      }
-      a {
-        display:flex;
-        text-decoration: blink;
-        width:100%;
-        color:#ffffff;
+    ul {
+      padding-top: 20px;
+      li {
+        padding: 10px 20px;
+        a {
+          color:#fff;
+          i {
+            margin-right:15px;
+          }
+        }
       }
     }
   }

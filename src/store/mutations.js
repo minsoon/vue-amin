@@ -1,4 +1,4 @@
-import Cookies from 'js-cookie';
+import { setStore, removeStore } from '../auth/utils.js';
 
 const mutations = {
   addState (state, data) {
@@ -10,20 +10,25 @@ const mutations = {
   updateLayout (state, layout) {
     state.layout = layout;
   },
-  updateIsUser (state, data) {
-    // state = Object.assign({}, defaults, data);
-    state.user.accessToken = data.user.accessToken;
+  updateUserInfo (state, data) {
+    state.accessToken = data.accessToken;
     state.user.name = data.user.name;
     state.user.email = data.user.email;
     state.user.id = data.user.id;
-    Cookies.set('isUser', data, 1);
+    setStore('isUser', {
+      name: data.user.name,
+      email: data.user.email,
+      id: data.user.id
+    }, 1);
+    setStore('accessToken', data.accessToken, 1);
   },
-  clearIsUser (state) {
-    state.user.accessToken = null;
+  clearUserInfo (state) {
+    state.accessToken = null;
     state.user.name = null;
     state.user.email = null;
     state.user.id = null;
-    Cookies.remove('isUser');
+    removeStore('isUser');
+    removeStore('accessToken');
   }
 };
 

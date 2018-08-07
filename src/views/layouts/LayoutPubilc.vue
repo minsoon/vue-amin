@@ -4,15 +4,7 @@
 
 <script>
 export default {
-  name: 'LayoutPubilc',
-  data () {
-    return {
-      msg: ':::: LayoutPubilc ::::'
-    };
-  },
-  created () {
-    console.log(this.msg);
-  }
+  name: 'LayoutPubilc'
 };
 </script>
 

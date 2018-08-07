@@ -7,10 +7,12 @@
 <script>
 import LayoutDefault from '@/views/layouts/LayoutDefault.vue';
 import LayoutPubilc from '@/views/layouts/LayoutPubilc.vue';
+import * as VApp from 'vuetify/es5/components/VApp';
 
 export default {
   name: 'App',
   components: {
+    ...VApp,
     LayoutDefault,
     LayoutPubilc
   },

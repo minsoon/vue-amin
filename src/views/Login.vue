@@ -51,14 +51,13 @@ import * as VForm from 'vuetify/es5/components/VForm';
 import * as VTextField from 'vuetify/es5/components/VTextField';
 
 export default {
-  name: 'LoginTest',
+  name: 'Login',
   components: {
     ...VForm,
     ...VTextField
   },
   data () {
     return {
-      msg: 'login',
       valid: true,
       name: '',
       nameRules: [
@@ -80,9 +79,7 @@ export default {
           id: this.name,
           password: this.password
         }).then((data) => {
-          var queryUrl = this.$route.query.redirect;
-          if (queryUrl) return this.$router.push(queryUrl);
-          this.$router.push({ name: 'List' });
+          this.$router.replace(this.$route.query.redirect || '/list');
         }).catch((error) => {
           alert('로그인 에러');
           /*

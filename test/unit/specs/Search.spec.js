@@ -1,7 +1,11 @@
-import { mount } from '@vue/test-utils';
+import { mount, RouterLinkStub } from '@vue/test-utils';
 import Search from '@/views/Search';
 
-const wrapperSearch = mount(Search);
+const wrapperSearch = mount(Search, {
+  stubs: {
+    RouterLink: RouterLinkStub
+  }
+});
 
 describe('Search.vue', () => {
   it('검색에 따라 데이터가 잘 노출 되는가', () => {

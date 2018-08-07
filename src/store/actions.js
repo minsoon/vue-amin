@@ -8,11 +8,11 @@ const actions = {
   updateLayout ({ commit }, layout) {
     commit('updateLayout', layout);
   },
-  updateIsUser ({ commit }, data) {
-    commit('updateIsUser', data);
+  updateUserInfo ({ commit }, data) {
+    commit('updateUserInfo', data);
   },
-  clearIsUser ({ commit }) {
-    commit('clearIsUser');
+  clearUserInfo ({ commit }) {
+    commit('clearUserInfo');
   }
 };
 

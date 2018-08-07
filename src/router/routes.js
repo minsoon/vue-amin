@@ -1,8 +1,8 @@
-import error from '@/views/Page404';
+// import error from '@/views/Page404';
 import login from '@/views/Login';
 import search from '@/views/Search';
 import list from '@/views/List';
-import dataview from '@/views/dataview';
+import view from '@/views/View';
 import chart from '@/views/chart/index';
 import vuetifyGuide from '@/views/VuetifyGuide';
 
@@ -11,58 +11,59 @@ const routes = [
     name: 'Login',
     path: '/login',
     component: login,
-    title: 'Login',
-    layout: 'LayoutPubilc',
-    isPublic: true
+    meta: {
+      layout: 'LayoutPubilc',
+      isPublic: true
+    }
   },
   {
     name: 'Search',
     path: '/search',
     component: search,
-    title: 'Search',
-    layout: 'LayoutDefault',
-    isPublic: true
+    meta: {
+      layout: 'LayoutDefault',
+      isPublic: false
+    }
   },
   {
     name: 'List',
     path: '/list',
     component: list,
-    title: 'List',
-    layout: 'LayoutDefault',
-    isPublic: true
+    meta: {
+      layout: 'LayoutDefault',
+      isPublic: false
+    }
   },
   {
-    name: 'DataView',
-    path: '/dataView/:id',
-    component: dataview,
-    title: 'DataView',
-    layout: 'LayoutDefault',
-    isPublic: true
+    name: 'View',
+    path: '/view/:id',
+    component: view,
+    meta: {
+      layout: 'LayoutDefault',
+      isPublic: false
+    }
   },
   {
     name: 'VuetifyGuide',
     path: '/VuetifyGuide',
     component: vuetifyGuide,
-    title: 'Vuetify Guide',
-    layout: 'LayoutDefault',
-    isPublic: true
+    meta: {
+      layout: 'LayoutDefault',
+      isPublic: false
+    }
   },
   {
     name: 'Chart',
     path: '/Chart',
     component: chart,
-    title: 'Chart',
-    layout: 'LayoutDefault',
-    isPublic: true
+    meta: {
+      layout: 'LayoutDefault',
+      isPublic: false
+    }
   },
   {
     path: '*',
-    name: '404',
-    redirect: '/404',
-    component: error,
-    title: '404',
-    layout: 'LayoutPubilc',
-    isPublic: false
+    redirect: '/list'
   }
 ];
 
