@@ -3,8 +3,9 @@ import login from '@/views/Login';
 import search from '@/views/Search';
 import list from '@/views/List';
 import view from '@/views/View';
-import chart from '@/views/chart/index';
 import vuetifyGuide from '@/views/VuetifyGuide';
+
+const chart = () => import(/* webpackChunkName: "chart" */ '@/views/chart/index.vue');
 
 const routes = [
   {

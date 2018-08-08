@@ -16,7 +16,8 @@
       }
     }],
     "transform-vue-jsx",
-    "transform-runtime"
+    "transform-runtime",
+    "syntax-dynamic-import"
   ],
   "env": {
     "test": {
